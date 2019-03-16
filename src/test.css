@@ -1,0 +1,14 @@
+.parent {
+    display: flex;
+    background-color: grey;
+    padding:2px;
+    text-align: center;
+
+}
+
+.mChild {
+    display: inline-block;
+    flex:1;
+    background-color: aqua;
+    margin:1px;
+}
