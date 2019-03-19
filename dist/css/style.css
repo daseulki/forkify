@@ -490,3 +490,10 @@ body {
   .shopping__item:hover .shopping__delete {
     opacity: 1;
     visibility: visible; }
+
+    .deleteAll {
+      right: 7%;
+      top: 29%;
+      position: absolute;
+  
+    }

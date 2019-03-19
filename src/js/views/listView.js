@@ -26,6 +26,11 @@ export const renderItem = item => {
 }
 export const deleteItem = id => {
     const item = document.querySelector(`[data-itemid="${id}"]`);
+    console.log(item.parentElement)
     if (item) item.parentElement.removeChild(item); //자신 없애려면 부모로 접근해서 removeChild
 
+}
+
+export const deleteAll = () => {
+    document.querySelectorAll(".shopping__list li").forEach(e => e.parentElement.removeChild(e));
 }

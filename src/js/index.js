@@ -98,18 +98,25 @@ const controlList = () => {
 }
  
 elements.shopping.addEventListener('click', e => {
-    const id = e.target.closest('.shopping__item').dataset.itemid;
-    if (e.target.matches('.shopping__delete, .shopping__delete *')) {
-        console.log(id);
-        console.log(listView);
+    let id;    
+    //console.log(state.list);
+    
+    if(e.target.matches('.deleteAll, .deleteAll *')) {
+        
+        state.list.items = [];
+        listView.deleteAll();
+    }
+    else if (e.target.matches('.shopping__delete, .shopping__delete *')) {
+        id = e.target.closest('.shopping__item').dataset.itemid;
         state.list.deleteItem(id);
         listView.deleteItem(id);
 
     } else if (e.target.matches('.shopping__count-value')) {
         const val = parseFloat(e.target.value, 10);
+        id = e.target.closest('.shopping__item').dataset.itemid;
         state.list.updateCount(id, val);
 
-    } //else if(e.target.matches('.shopping__delete ')) {} 
+    } 
 });
 
 
